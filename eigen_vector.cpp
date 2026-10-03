@@ -3,19 +3,21 @@
 
 //since we are only working with square 2 by 2 matrices most
 //of the time, let's just hardcode for now, i dont wanna use Templates...
-void printMatrix(int (*)[2], size_t, size_t);
+void printMatrix(float (*)[2], size_t, size_t);
 
 /* let's make the identity matrix */
 constexpr float identity_matrix[2][2] = {
 										{1.0f, 0.0f},
 										{0.0f, 1.0f}
 									};
-
-int 
+int
 main(void)
 {
 	/* first of all, let's create a simple 2 by 2 matrix */
-	int matrix[2][2] = {{1, 2}, {5, 6}};
+	float matrix[2][2] = {
+		{1.0f, 2.0f}, 
+		{5.0f, 6.0f}
+	};
 	std::cout << "We have a square matrix as so: \n";
 	printMatrix(matrix, 2, 2);
 	std::cout << "Let us find the Eigen-vector and its respective Eigen value of this matrix\n";
@@ -28,7 +30,7 @@ main(void)
 }
 
 void
-printMatrix(int (*matrix)[2], size_t rows, size_t columns)
+printMatrix(float (*matrix)[2], size_t rows, size_t columns)
 {
 	for (size_t i = 0; i < rows; ++i)
 	{
