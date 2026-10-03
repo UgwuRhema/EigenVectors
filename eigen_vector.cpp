@@ -5,6 +5,12 @@
 //of the time, let's just hardcode for now, i dont wanna use Templates...
 void printMatrix(int (*)[2], size_t, size_t);
 
+/* let's make the identity matrix */
+constexpr int identity_matrix[2][2] = {
+										{1, 0},
+										{0, 1}
+									};
+
 int 
 main(void)
 {
