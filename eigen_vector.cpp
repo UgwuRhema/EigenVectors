@@ -13,6 +13,11 @@ main(void)
 	std::cout << "We have a square matrix as so: \n";
 	printMatrix(matrix, 2, 2);
 	std::cout << "Let us find the Eigen-vector and its respective Eigen value of this matrix\n";
+	
+	std::cout << "First step to finding an Eigen Vector is to find it's respective eigen values\n";
+	std::cout << "Using this formula: A - EI = 0\n";
+	std::cout << "\twhere A = square matrix, E = Eigen Value and I = Identity matrix\n";
+
 	return 0;
 }
 
