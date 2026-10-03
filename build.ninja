@@ -1,0 +1,6 @@
+cflags = -Wall -Wextra -g -O0 -march=native
+
+rule cc
+    command = g++ $cflags $in -o $out
+
+build eigen:   cc  ./eigen_vector.cpp
