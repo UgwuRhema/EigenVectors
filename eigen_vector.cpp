@@ -4,6 +4,7 @@
 //since we are only working with square 2 by 2 matrices most
 //of the time, let's just hardcode for now, i dont wanna use Templates...
 void printMatrix(float (*)[2], size_t, size_t);
+void quadEqtn(float, float, float, float *);
 
 /* let's make the identity matrix */
 constexpr float identity_matrix[2][2] = {
@@ -26,6 +27,9 @@ main(void)
 	std::cout << "Using this formula: A - EI = 0\n";
 	std::cout << "\twhere A = square matrix, E = Eigen Value and I = Identity matrix\n";
 
+	/* let's try a simple quad equation solver that returns 2 roots */
+	float roots[2] = {0};
+	quadEqtn(2, 2, 4, roots);
 	return 0;
 }
 
@@ -42,4 +46,21 @@ printMatrix(float (*matrix)[2], size_t rows, size_t columns)
 		std::cout << "\b]";
 		std::cout << std::endl;
 	}	
+}
+
+void
+quadEqtn(float a, float b, float c, float *eigen_values)
+{
+	float discriminant = ((b * b) - (4.0f * a * c));
+	if (discriminant >= 0.0f)
+	{
+		float lambda1 = (float)((-b + std::sqrt(discriminant)) / (2.0f * a));
+		float lambda2 = (float)((-b - std::sqrt(discriminant)) / (2.0f * a));
+		eigen_values[0] = lambda1;
+		eigen_values[1] = lambda2;
+	} else {
+		std::cerr << "No real Eigen Vectors, only Complex imaginary EigenVectors\n";
+		std::cerr << "Which causes rotation of the matrix, which beats the point\n";
+		std::cerr << "So we will not be computing that!\n";
+	}
 }
