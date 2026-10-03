@@ -6,9 +6,9 @@
 void printMatrix(int (*)[2], size_t, size_t);
 
 /* let's make the identity matrix */
-constexpr int identity_matrix[2][2] = {
-										{1, 0},
-										{0, 1}
+constexpr float identity_matrix[2][2] = {
+										{1.0f, 0.0f},
+										{0.0f, 1.0f}
 									};
 
 int 
