@@ -29,7 +29,7 @@ main(void)
 
 	/* let's try a simple quad equation solver that returns 2 roots */
 	float roots[2] = {0};
-	quadEqtn(2, 2, 4, roots);
+	quadEqtn(2, -5, -3, roots);
 	return 0;
 }
 
@@ -56,6 +56,8 @@ quadEqtn(float a, float b, float c, float *eigen_values)
 	{
 		float lambda1 = (float)((-b + std::sqrt(discriminant)) / (2.0f * a));
 		float lambda2 = (float)((-b - std::sqrt(discriminant)) / (2.0f * a));
+		std::cout << "The Eigen Values are: " << lambda1 << " & ";
+		std::cout << lambda2 << '\n';
 		eigen_values[0] = lambda1;
 		eigen_values[1] = lambda2;
 	} else {
