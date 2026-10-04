@@ -6,7 +6,7 @@
 void printMatrix(float (*)[2], size_t, size_t);
 void quadEqtn(float, float, float, float *);
 float solveDeterminantOfMatrix(float (*)[2]);
-float findTrace(float (*)[2]);
+float findNegTrace(float (*)[2]);
 
 /* let's make the identity matrix */
 constexpr float identity_matrix[2][2] = {
@@ -31,9 +31,12 @@ main(void)
 
 	/* let's try a simple quad equation solver that returns 2 roots */
 	float roots[2] = {0};
-	quadEqtn(2, -5, -3, roots);
+	/* okay after further implementations, we can now find the eigen values */
 	float determinant = solveDeterminantOfMatrix(matrix);
-	std::cout << "The determinant of the matrix is: " << determinant << '\n';
+	float trace = findNegTrace(matrix);
+	quadEqtn(1.0f, trace, determinant, roots);
+	std::cout << "The Eigen values are: ";
+	std::cout << *(roots) << " and " << *(roots + 1) << '\n';
 	return 0;
 }
 
