@@ -58,7 +58,7 @@ solveDeterminantOfMatrix(float (*matrix)[2])
 	//[ c, d ]
 
 	float first_diagonal = *(*(matrix)) * *(*(matrix + 1) + 1);
-	float second_diagonal = matrix[0][1] * matrix[1][0];
+	float second_diagonal = *(*(matrix) + 1) * *(*(matrix + 1));
 	return first_diagonal - second_diagonal;
 }
 
