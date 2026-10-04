@@ -5,6 +5,7 @@
 //of the time, let's just hardcode for now, i dont wanna use Templates...
 void printMatrix(float (*)[2], size_t, size_t);
 void quadEqtn(float, float, float, float *);
+float solveDeterminantOfMatrix(float (*)[2]);
 
 /* let's make the identity matrix */
 constexpr float identity_matrix[2][2] = {
@@ -46,6 +47,17 @@ printMatrix(float (*matrix)[2], size_t rows, size_t columns)
 		std::cout << "\b]";
 		std::cout << std::endl;
 	}	
+}
+
+float
+solveDeterminantOfMatrix(float (*matrix)[2])
+{
+	//[ a, b ]
+	//[ c, d ]
+
+	float first_diagonal = matrix[0][0] * matrix[1][1];
+	float second_diagonal = matrix[0][1] * matrix[1][0];
+	return first_diagonal - second_diagonal;
 }
 
 void
