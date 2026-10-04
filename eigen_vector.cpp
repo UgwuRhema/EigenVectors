@@ -6,6 +6,7 @@
 void printMatrix(float (*)[2], size_t, size_t);
 void quadEqtn(float, float, float, float *);
 float solveDeterminantOfMatrix(float (*)[2]);
+float findTrace(float (*)[2]);
 
 /* let's make the identity matrix */
 constexpr float identity_matrix[2][2] = {
@@ -49,6 +50,15 @@ printMatrix(float (*matrix)[2], size_t rows, size_t columns)
 		std::cout << "\b]";
 		std::cout << std::endl;
 	}	
+}
+
+//after some reading, i found out that to find thje determinant is just easy....
+float
+findNegTrace(float (*matrix)[2])
+{
+	// a b
+	// c d
+	return -(*(*(matrix)) + *(*(matrix + 1) + 1));
 }
 
 float
