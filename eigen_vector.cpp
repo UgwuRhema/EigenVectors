@@ -35,8 +35,6 @@ main(void)
 	float determinant = solveDeterminantOfMatrix(matrix);
 	float trace = findNegTrace(matrix);
 	quadEqtn(1.0f, trace, determinant, roots);
-	std::cout << "The Eigen values are: ";
-	std::cout << *(roots) << " and " << *(roots + 1) << '\n';
 	return 0;
 }
 
@@ -83,7 +81,7 @@ quadEqtn(float a, float b, float c, float *eigen_values)
 	{
 		float lambda1 = (float)((-b + std::sqrt(discriminant)) / (2.0f * a));
 		float lambda2 = (float)((-b - std::sqrt(discriminant)) / (2.0f * a));
-		std::cout << "The Eigen Values are: " << lambda1 << " & ";
+		std::cout << "The Eigen Values are: " << lambda1 << " and ";
 		std::cout << lambda2 << '\n';
 		*(eigen_values) = lambda1;
 		*(eigen_values + 1) = lambda2;
