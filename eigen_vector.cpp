@@ -18,8 +18,8 @@ main(void)
 {
 	/* first of all, let's create a simple 2 by 2 matrix */
 	float matrix[2][2] = {
-		{1.0f, 2.0f}, 
-		{5.0f, 6.0f}
+		{5.0f, 2.0f}, 
+		{2.0f, 5.0f}
 	};
 	std::cout << "We have a square matrix as so: \n";
 	printMatrix(matrix, 2, 2);
