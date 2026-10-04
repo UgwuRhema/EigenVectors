@@ -72,8 +72,8 @@ quadEqtn(float a, float b, float c, float *eigen_values)
 		float lambda2 = (float)((-b - std::sqrt(discriminant)) / (2.0f * a));
 		std::cout << "The Eigen Values are: " << lambda1 << " & ";
 		std::cout << lambda2 << '\n';
-		eigen_values[0] = lambda1;
-		eigen_values[1] = lambda2;
+		*(eigen_values) = lambda1;
+		*(eigen_values + 1) = lambda2;
 	} else {
 		std::cerr << "No real Eigen Vectors, only Complex imaginary EigenVectors\n";
 		std::cerr << "Which causes rotation of the matrix, which beats the point\n";
