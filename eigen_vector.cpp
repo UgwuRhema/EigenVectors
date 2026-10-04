@@ -31,6 +31,8 @@ main(void)
 	/* let's try a simple quad equation solver that returns 2 roots */
 	float roots[2] = {0};
 	quadEqtn(2, -5, -3, roots);
+	float determinant = solveDeterminantOfMatrix(matrix);
+	std::cout << "The determinant of the matrix is: " << determinant << '\n';
 	return 0;
 }
 
@@ -55,7 +57,7 @@ solveDeterminantOfMatrix(float (*matrix)[2])
 	//[ a, b ]
 	//[ c, d ]
 
-	float first_diagonal = matrix[0][0] * matrix[1][1];
+	float first_diagonal = *(*(matrix)) * *(*(matrix + 1) + 1);
 	float second_diagonal = matrix[0][1] * matrix[1][0];
 	return first_diagonal - second_diagonal;
 }
