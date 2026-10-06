@@ -47,6 +47,7 @@ main(void)
 	/* okay to get new equation we can just evaluate on row, but let's make a function */
 	float eigen_vector1[2] = {0};
 	findEigenVector(new_matrix, eigen_vector1);
+	std::cout << "The Eigen Vector for the Matrix with Eigen Value " << roots[0] << " is: \n";
 	printVector(eigen_vector1, 2); /* let's see... */
 	return 0;
 }
