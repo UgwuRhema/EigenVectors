@@ -8,6 +8,7 @@ void quadEqtn(float, float, float, float *);
 float solveDeterminantOfMatrix(float (*)[2]);
 float findNegTrace(float (*)[2]);
 void findEigenVector(float (*)[2], float *);
+void printVector(float *, size_t);
 
 /* let's make the identity matrix */
 constexpr float identity_matrix[2][2] = {
@@ -46,6 +47,7 @@ main(void)
 	/* okay to get new equation we can just evaluate on row, but let's make a function */
 	float eigen_vector1[2] = {0};
 	findEigenVector(new_matrix, eigen_vector1);
+	printVector(eigen_vector1, 2); /* let's see... */
 	return 0;
 }
 
@@ -70,6 +72,15 @@ findEigenVector(float (*nmatrix)[2], float *out_vector)
 	/* THAT"S IT! now let's construct the eigen vector */
 	*(out_vector) = x;
 	*(out_vector + 1) = y;
+}
+
+void
+printVector(float *vec, size_t size)
+{
+	for (size_t i = 0; i < size; ++i)
+	{
+		std::cout << '[' << *(vec + i) << "]\n";
+	}
 }
 
 void
