@@ -7,7 +7,7 @@ void printMatrix(float (*)[2], size_t, size_t);
 void quadEqtn(float, float, float, float *);
 float solveDeterminantOfMatrix(float (*)[2]);
 float findNegTrace(float (*)[2]);
-void findEigenVector(float (*)[2], int, float *);
+void findEigenVector(float (*)[2], float *);
 
 /* let's make the identity matrix */
 constexpr float identity_matrix[2][2] = {
@@ -45,12 +45,12 @@ main(void)
 	printMatrix(new_matrix, 2, 2);
 	/* okay to get new equation we can just evaluate on row, but let's make a function */
 	float eigen_vector1[2] = {0};
-	findEigenVector(new_matrix, roots[0], eigen_vector1);
+	findEigenVector(new_matrix, eigen_vector1);
 	return 0;
 }
 
 void
-findEigenVector(float (*nmatrix)[2], int eigen_val, float *out_vector)
+findEigenVector(float (*nmatrix)[2], float *out_vector)
 {
 	// [ a', b]
 	// [ c, d']
