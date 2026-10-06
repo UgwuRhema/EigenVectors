@@ -35,6 +35,7 @@ main(void)
 	float determinant = solveDeterminantOfMatrix(matrix);
 	float trace = findNegTrace(matrix);
 	quadEqtn(1.0f, trace, determinant, roots);
+	/* so now that we have the eigen values we can now continue */
 	return 0;
 }
 
