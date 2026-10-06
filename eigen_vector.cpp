@@ -60,6 +60,13 @@ findEigenVector(float (*nmatrix)[2], int eigen_val, float *out_vector)
 	float d = *(*(nmatrix + 1) + 1);
 
 	float x, y; /* the values we wanna find to make the vector */
+	/* the singular equation we'll use is = a'.x + b.y = 0 */
+	/* after solving that equation...x = -b and y = a' */
+	x = -b;
+	y = a;
+	/* THAT"S IT! now let's construct the eigen vector */
+	*(out_vector) = x;
+	*(out_vector + 1) = y;
 }
 
 void
