@@ -36,6 +36,11 @@ main(void)
 	float trace = findNegTrace(matrix);
 	quadEqtn(1.0f, trace, determinant, roots);
 	/* so now that we have the eigen values we can now continue */
+	/* let's solve for the first eigen value... */
+	float new_matrix[2][2] =  {
+		{(matrix[0][0] - roots[0]), *(*(matrix) + 1)},
+		{*(*(matrix + 1)), (matrix[1][1] - roots[0])}
+	}; /* this should be the new matrix after evaluating (A - EI)*/
 	return 0;
 }
 
