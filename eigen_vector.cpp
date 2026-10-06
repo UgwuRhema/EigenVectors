@@ -41,6 +41,8 @@ main(void)
 		{(matrix[0][0] - roots[0]), *(*(matrix) + 1)},
 		{*(*(matrix + 1)), (matrix[1][1] - roots[0])}
 	}; /* this should be the new matrix after evaluating (A - EI)*/
+	
+	printMatrix(new_matrix, 2, 2);
 	return 0;
 }
 
